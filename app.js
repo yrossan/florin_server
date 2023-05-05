@@ -4,6 +4,7 @@ const logger = require('morgan')
 
 // Router
 const userRouter = require("./routers/user");
+const postRouter = require('./routers/post')
 
 
 
@@ -20,6 +21,7 @@ app.get("/", (req, res) => {
 });
 
 app.use('/users', userRouter)
+app.use('/posts', postRouter)
 
 
 module.exports = app;

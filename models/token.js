@@ -12,7 +12,7 @@ class Token {
 
     static async create(user_id) {
         const token = uuidv4();
-        const response = await db.query("INSERT INTO token (user_id, token) VALUES ($1, $2) RETURNING token_id;",
+        const response = await db.query("INSERT INTO tokens (user_id, token) VALUES ($1, $2) RETURNING token_id;",
             [user_id, token]);
         const newId = response.rows[0].token_id;
         const newToken = await Token.getOneById(newId);
@@ -20,7 +20,7 @@ class Token {
     }
 
     static async getOneById(id) {
-        const response = await db.query("SELECT * FROM token WHERE token_id = $1", [id]);
+        const response = await db.query("SELECT * FROM tokens WHERE token_id = $1", [id]);
         if (response.rows.length != 1) {
             throw new Error("Unable to locate token.");
         } else {
@@ -29,7 +29,7 @@ class Token {
     }
 
     static async getOneByToken(token) {
-        const response = await db.query("SELECT * FROM token WHERE token = $1", [token]);
+        const response = await db.query("SELECT * FROM tokens WHERE token = $1", [token]);
         if (response.rows.length != 1) {
             throw new Error("Unable to locate token.");
         } else {
