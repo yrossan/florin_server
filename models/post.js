@@ -21,8 +21,28 @@ class Post {
         return response.rows.map(p => new Post(p));
     }
 
-        static async getAllEvents() {
+    static async getAllEvents() {
         const response = await db.query("SELECT * From posts WHERE category = 'Events' ")
+        return response.rows.map(p => new Post(p));
+    }
+
+    static async getAllJobs() {
+        const response = await db.query("SELECT * From posts WHERE category = 'Jobs' ")
+        return response.rows.map(p => new Post(p));
+    }
+
+        static async getAllVoluntary() {
+        const response = await db.query("SELECT * From posts WHERE category = 'Voluntary Work' ")
+        return response.rows.map(p => new Post(p));
+    }
+
+    static async getAllAnnouncements() {
+        const response = await db.query("SELECT * From posts WHERE category = 'Announcements' ")
+        return response.rows.map(p => new Post(p));
+    }
+
+    static async getAllClubs() {
+        const response = await db.query("SELECT * From posts WHERE category = 'Clubs' ")
         return response.rows.map(p => new Post(p));
     }
 

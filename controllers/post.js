@@ -27,7 +27,41 @@ async function getEvents(req, res) {
     }
 }
 
+async function getJobs(req, res) {
+    try {
+        const jobs = await Post.getAllJobs()
+        res.status(200).json(jobs)
+    } catch (err) {
+        res.status(500).json({"error": err.message})
+    }
+}
 
+async function getClubs(req, res) {
+    try {
+        const clubs = await Post.getAllClubs()
+        res.status(200).json(clubs)
+    } catch (err) {
+        res.status(500).json({"error": err.message})
+    }
+}
+
+async function getVoluntary(req, res) {
+    try {
+        const jobs = await Post.getAllVoluntary()
+        res.status(200).json(jobs)
+    } catch (err) {
+        res.status(500).json({"error": err.message})
+    }
+}
+
+async function getAnnouncements(req, res) {
+    try {
+        const announcements = await Post.getAllAnnouncements()
+        res.status(200).json(announcements)
+    } catch (err) {
+        res.status(500).json({"error": err.message})
+    }
+}
 
 async function create (req, res) {
     try {
@@ -66,5 +100,9 @@ module.exports = {
     show,
     destroy,
     getServices, 
-    getEvents
+    getEvents,
+    getJobs,
+    getVoluntary,
+    getAnnouncements,
+    getClubs
 }
