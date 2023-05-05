@@ -2,6 +2,10 @@ const express = require("express");
 const cors = require("cors");
 const logger = require('morgan')
 
+// Router
+const userRouter = require("./routers/user");
+
+
 
 const app = express();
 
@@ -14,6 +18,8 @@ app.use(logger('dev'))
 app.get("/", (req, res) => {
     res.send('Welcome to Florin County API');
 });
+
+app.use('/users', userRouter)
 
 
 module.exports = app;
