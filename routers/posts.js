@@ -1,6 +1,6 @@
 const { Router } = require('express');
 
-const postController = require('../controllers/post.js');
+const postController = require('../controllers/posts.js');
 const authenticator = require('../middleware/authenticator.js')
 
 const postRouter = Router();
