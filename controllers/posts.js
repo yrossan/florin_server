@@ -66,6 +66,7 @@ async function getAnnouncements(req, res) {
 async function create (req, res) {
     try {
         const data = req.body;
+        console.log(data)
         const result = await Post.create(data);
         res.status(201).send(result);
     } catch (err) {
