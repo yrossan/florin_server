@@ -38,8 +38,6 @@ class User {
             response = await db.query("INSERT INTO users (username, password) VALUES ($1, $2) RETURNING user_id;",
             [username, password]);
         }
-        response = await db.query("INSERT INTO users (username, password) VALUES ($1, $2) RETURNING user_id;",
-            [username, password]);
         const newId = response.rows[0].user_id;
         const newUser = await User.getOneById(newId);
         return newUser;
