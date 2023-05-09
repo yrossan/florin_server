@@ -28,16 +28,8 @@ class User {
 
     static async create(data) {
         const { username, password, isAdmin , isBusiness} = data;
-        let response;
-        if (isBusiness  || isAdmin) {
-            isBusiness = isBusiness === 1 ? 1 : 0;
-            isAdmin = isAdmin === 1 ? 1 : 0;
-            response = await db.query("INSERT INTO users (username, password, is_admin, is_business) VALUES ($1, $2, $3, $4) RETURNING user_id;",
+        let response = await db.query("INSERT INTO users (username, password, is_admin, is_business) VALUES ($1, $2, $3, $4) RETURNING user_id;",
             [username, password, isAdmin, isBusiness]);
-        } else {
-            response = await db.query("INSERT INTO users (username, password) VALUES ($1, $2) RETURNING user_id;",
-            [username, password]);
-        }
         const newId = response.rows[0].user_id;
         const newUser = await User.getOneById(newId);
         return newUser;
