@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const logger = require('morgan')
 
-// Router
+
 const userRouter = require("./routers/users");
 const postRouter = require('./routers/posts');
 const commentsRouter = require('./routers/comments')
