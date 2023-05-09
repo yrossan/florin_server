@@ -1,11 +1,11 @@
 const db = require('../database/connect')
 
 class Comment {
-    constructor({comment_id, comment, post_id, author_id, comment_date}) {
+    constructor({comment_id, comment_content, post_id, comment_author_id, comment_date}) {
         this.id = comment_id;
-        this.comment = comment;
+        this.comment = comment_content;
         this.post_id = post_id;
-        this.author_id = author_id;
+        this.author_id = comment_author_id;
         this.comment_date = comment_date;
     }
 
