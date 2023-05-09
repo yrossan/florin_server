@@ -55,9 +55,9 @@ class Post {
     }
 
     static async create(data) {
-        const { title, content } = data;
-        let response = await db.query("INSERT INTO posts (post_title, post_content) VALUES ($1, $2) RETURNING post_id;",
-            [title, content]);
+        const { title, content , category, author_id, post_date} = data;
+        let response = await db.query("INSERT INTO posts (post_title, post_content, post_category, post_author_id, post_date) VALUES ($1, $2, $3, $4, $5) RETURNING post_id;",
+            [title, content, category, author_id, post_date]);
         const newId = response.rows[0].post_id;
         const newPost = await Post.getOneById(newId);
         return newPost;

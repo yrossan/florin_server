@@ -37,9 +37,10 @@ class Token {
         }
     }
 
-    async deleteToken() {
-        const response = await db.query("")
-    }
+    // async deleteToken() {
+    //     const response = await db.query("DELETE FROM tokens WHERE token = $1 LIMIT 1", [this.token])
+        
+    // }
 
 }
 
