@@ -21,7 +21,7 @@ class Token {
 
     static async getOneById(id) {
         const response = await db.query("SELECT * FROM tokens WHERE token_id = $1", [id]);
-        if (response.rows.length != 1) {
+        if (response.rows.length === 0) {
             throw new Error("Unable to locate token.");
         } else {
             return new Token(response.rows[0]);
