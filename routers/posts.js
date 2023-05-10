@@ -5,7 +5,7 @@ const authenticator = require('../middleware/authenticator.js')
 
 const postRouter = Router();
 
-postRouter.get("/", postController.index);
+postRouter.get("/", authenticator, postController.index);
 postRouter.get('/services', postController.getServices);
 postRouter.get('/events', postController.getEvents)
 postRouter.get("/clubs", postController.getClubs);
