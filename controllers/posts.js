@@ -7,7 +7,7 @@ async function index (req, res) {
     } catch (err) {
         res.status(500).json({"error": err.message})
     }
-};
+}
 
 async function getServices(req, res) {
     try {
