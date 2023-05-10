@@ -30,6 +30,7 @@ class Token {
 
     static async getOneByToken(token) {
         const response = await db.query("SELECT * FROM tokens WHERE token = $1", [token]);
+        console.log(response.rows)
         if (response.rows.length === 0) {
             throw new Error("Unable to locate token.");
         } else {
