@@ -64,7 +64,7 @@ class Post {
     }
 
     async destroy() {
-        let response = await db.query("DELETE FROM post WHERE post_id = $1 RETURNING *;", [this.id]);
+        let response = await db.query("DELETE FROM posts WHERE post_id = $1 RETURNING *;", [this.id]);
         return new Post(response.rows[0]);
     }
 
