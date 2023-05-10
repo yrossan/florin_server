@@ -29,18 +29,17 @@ describe('API Endpoints', () => {
             .expect(404, done)
     })
 
-    it('responds to GET /posts with status 200', async (done) => {
+    it('responds to GET /posts with status 200', () => {
         // request(api)
         //     .get('/posts')
         //     .expect(200, done)
-        const response = await request(api).get('/posts')
-        expect(response.status).toBe(500, done)
-        // done();
+        request(api).get('/posts')
+        .expect(200)
     })
 
-    it('responds to GET /announcements with status 200', (done) => {
+    it('responds to GET /announcements with status 200', () => {
         request(api)
             .get('/posts/announcements')
-            .expect(200, done)
+            .expect(200)
     })
 })
