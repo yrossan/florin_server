@@ -2,7 +2,9 @@ const Token = require("../models/Token");
 
 async function authenticator(req, res, next) {
     try {
-        const userToken = req.headers["Authorization"];
+        const userToken = req.headers["authorization"];
+        console.log(userToken)
+        console.log(req.headers)
         if (userToken == "null") {
             throw new Error("User not authenticated.");
         } else {
