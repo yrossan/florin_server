@@ -9,9 +9,6 @@ CREATE TABLE users (
     is_admin INT DEFAULT 0 NOT NULL,
     is_business INT DEFAULT 0 NOT NULL,
     password CHAR(60) NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES posts(post_author_id)
-    FOREIGN KEY (user_id) REFERENCES comments(comment_author_id)
-    FOREIGN KEY (user_id) REFERENCES tokens(user_id)
     PRIMARY KEY (user_id)
 );
 
@@ -30,7 +27,7 @@ CREATE TABLE posts (
     post_date DATE NOT NULL,
     post_category VARCHAR(20) NOT NULL,
     post_author_id INT NOT NULL,
-    FOREIGN KEY (post_author_id) REFERENCES comments("user_id"),
+    FOREIGN KEY (post_author_id) REFERENCES users("user_id"),
     PRIMARY KEY (post_id)
 );
 
