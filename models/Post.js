@@ -12,37 +12,37 @@ class Post {
     }
 
     static async getAll() {
-        const response = await db.query("SELECT * FROM posts");
+        const response = await db.query("SELECT * FROM posts ORDER BY post_date DESC;");
         return response.rows.map(p => new Post(p));
     }
 
     static async getAllServices() {
-        const response = await db.query("SELECT * From posts WHERE post_category = 'Services' ")
+        const response = await db.query("SELECT * From posts WHERE post_category = 'Services' ORDER BY post_date DESC;")
         return response.rows.map(p => new Post(p));
     }
 
     static async getAllEvents() {
-        const response = await db.query("SELECT * From posts WHERE post_category = 'Events' ")
+        const response = await db.query("SELECT * From posts WHERE post_category = 'Events' ORDER BY post_date DESC;")
         return response.rows.map(p => new Post(p));
     }
 
     static async getAllJobs() {
-        const response = await db.query("SELECT * From posts WHERE post_category = 'Jobs' ")
+        const response = await db.query("SELECT * From posts WHERE post_category = 'Jobs' ORDER BY post_date DESC;")
         return response.rows.map(p => new Post(p));
     }
 
         static async getAllVoluntary() {
-        const response = await db.query("SELECT * From posts WHERE post_category = 'Voluntary Work' ")
+        const response = await db.query("SELECT * From posts WHERE post_category = 'Voluntary Work' ORDER BY post_date DESC;")
         return response.rows.map(p => new Post(p));
     }
 
     static async getAllAnnouncements() {
-        const response = await db.query("SELECT * From posts WHERE post_category = 'Announcements' ")
+        const response = await db.query("SELECT * From posts WHERE post_category = 'Announcements' ORDER BY post_date DESC;")
         return response.rows.map(p => new Post(p));
     }
 
     static async getAllClubs() {
-        const response = await db.query("SELECT * From posts WHERE post_category = 'Clubs' ")
+        const response = await db.query("SELECT * From posts WHERE post_category = 'Clubs' ORDER BY post_date DESC;")
         return response.rows.map(p => new Post(p));
     }
 

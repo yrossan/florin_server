@@ -45,7 +45,7 @@ CREATE TABLE comments (
 INSERT INTO users (username, password) VALUES ('Chris', 'jkl');
 INSERT INTO users (username, password) VALUES ('Yaas', 'jkl');
 INSERT INTO users (username, password) VALUES ('Avni', 'jkl');
-INSERT INTO posts (post_title, post_content, post_date, post_category, post_author_id) VALUES ('First', 'Post', '2023-05-05', 'Services', 1);
+INSERT INTO posts (post_title, post_content, post_date, post_category, post_author_id) VALUES ('Romeo', 'Romeo is kinda mean', '2023-05-05', 'Services', 1);
 INSERT INTO posts (post_title, post_content, post_date, post_category, post_author_id) VALUES ('Second', 'Post', '2023-05-05', 'Services', 1);
 INSERT INTO posts (post_title, post_content, post_date, post_category, post_author_id) VALUES ('Third', 'Post', '2023-05-05', 'Announcements', 1);
 INSERT INTO posts (post_title, post_content, post_date, post_category, post_author_id) VALUES ('Fourth', 'Post', '2023-05-05', 'Announcements', 1);
@@ -62,17 +62,15 @@ INSERT INTO posts (post_title, post_content, post_date, post_category, post_auth
 
 
 INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date)
-VALUES ('Great job on this post! I found it very informative.', 1, 1, '2023-05-05');
+VALUES ('Yeah I heard he doesnt even like pandas', 1, 1, '2023-05-05');
 INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date)
-VALUES ('I completely agree with your points. Well said!', 1, 1, '2023-05-05');
+VALUES ('but theyre so cute, how can you not like pandas', 1, 1, '2023-05-05');
 INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date)
-VALUES ('This is a thought-provoking comment. It made me reconsider my perspective.', 1, 2, '2023-05-05');
+VALUES ('Nah hes not mean he just wants us to be awesome so he holds us to a high standard', 1, 2, '2023-05-05');
 INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date)
-VALUES ('Thank you for sharing your insights. I learned something new from your comment.', 1, 2, '2023-05-05');
+VALUES ('I dont know about that he gets a little to joyful about picking holes in our work', 1, 2, '2023-05-05');
 INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date)
-VALUES ('I appreciate your contribution to the discussion. Your comment adds valuable context.', 1, 3, '2023-05-05');
-INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date)
-VALUES ('Your comment resonated with me. It captures the essence of the topic perfectly.', 1, 3, '2023-05-05');
+
 
 INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date)
 VALUES ('Great job on this post! I found it very informative.', 2, 1, '2023-05-05');
@@ -81,12 +79,44 @@ VALUES ('I completely agree with your points. Well said!', 2, 1, '2023-05-05');
 INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date)
 VALUES ('This is a thought-provoking comment. It made me reconsider my perspective.', 2, 2, '2023-05-05');
 INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date)
-VALUES ('Thank you for sharing your insights. I learned something new from your comment.', 2, 2, '2023-05-05');
+VALUES ('Thank you for sharing your insights. I learned something new from your comment.', 3, 2, '2023-05-05');
 INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date)
-VALUES ('I appreciate your contribution to the discussion. Your comment adds valuable context.', 2, 3, '2023-05-05');
+VALUES ('I appreciate your contribution to the discussion. Your comment adds valuable context.', 3, 3, '2023-05-05');
 INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date)
-VALUES ('Your comment resonated with me. It captures the essence of the topic perfectly.', 2, 3, '2023-05-05');
+VALUES ('Your comment resonated with me. It captures the essence of the topic perfectly.', 3, 3, '2023-05-05');
 
+INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date)
+VALUES ('Great job on this post! I found it very informative.', 4, 1, '2023-05-05');
+INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date)
+VALUES ('I completely agree with your points. Well said!', 4, 1, '2023-05-05');
+INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date)
+VALUES ('This is a thought-provoking comment. It made me reconsider my perspective.', 4, 2, '2023-05-05');
+INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date)
+VALUES ('Thank you for sharing your insights. I learned something new from your comment.', 5, 2, '2023-05-05');
+INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date)
+VALUES ('I appreciate your contribution to the discussion. Your comment adds valuable context.', 5, 3, '2023-05-05');
+INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date)
+VALUES ('Your comment resonated with me. It captures the essence of the topic perfectly.', 5, 3, '2023-05-05');
+
+INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date)
+VALUES ('Great job on this post! I found it very informative.', 6, 1, '2023-05-05');
+INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date)
+VALUES ('I completely agree with your points. Well said!', 7, 1, '2023-05-05');
+INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date)
+VALUES ('This is a thought-provoking comment. It made me reconsider my perspective.', 8, 2, '2023-05-05');
+INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date)
+VALUES ('Thank you for sharing your insights. I learned something new from your comment.', 9, 2, '2023-05-05');
+INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date)
+VALUES ('I appreciate your contribution to the discussion. Your comment adds valuable context.', 10, 3, '2023-05-05');
+INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date)
+VALUES ('Your comment resonated with me. It captures the essence of the topic perfectly.', 11, 3, '2023-05-05');
+
+INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date)
+VALUES ('Great job on this post! I found it very informative.', 12, 1, '2023-05-05');
+INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date)
+VALUES ('I completely agree with your points. Well said!', 13, 1, '2023-05-05');
+INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date)
+VALUES ('This is a thought-provoking comment. It made me reconsider my perspective.', 14, 2, '2023-05-05');
 
 
 

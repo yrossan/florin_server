@@ -30,10 +30,8 @@ describe('API Endpoints', () => {
     })
 
     it('responds to GET /posts with status 200', () => {
-        // request(api)
-        //     .get('/posts')
-        //     .expect(200, done)
-        request(api).get('/posts')
+        request(api)
+        .get('/posts')
         .expect(200)
     })
 
@@ -42,4 +40,28 @@ describe('API Endpoints', () => {
             .get('/posts/announcements')
             .expect(200)
     })
+
+    it("responds to GET /services with status 200", () => {
+        request(api)
+            .get("/posts/services")
+            .expect(200);
+    });
+
+    it("responds to GET /jobs with status 200", () => {
+        request(api)
+            .get("/posts/jobs")
+            .expect(200);
+    });
+
+    it("responds to GET /voluntary with status 200", () => {
+        request(api)
+            .get("/posts/voluntary")
+            .expect(200);
+    });
+
+    it("responds to GET /events with status 200", () => {
+        request(api)
+            .get("/posts/events")
+            .expect(200);
+    });
 })
