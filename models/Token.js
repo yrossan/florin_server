@@ -32,16 +32,21 @@ class Token {
         const response = await db.query("SELECT * FROM tokens WHERE token = $1", [token]);
         console.log(response.rows)
         if (response.rows.length === 0) {
-            throw new Error("Unable to locate token.");
+            return response.rows
+            // throw new Error("Unable to locate token.");
         } else {
             return new Token(response.rows[0]);
         }
     }
 
-    // async deleteToken() {
-    //     const response = await db.query("DELETE FROM tokens WHERE token = $1 LIMIT 1", [this.token])
-        
-    // }
+    async deleteToken() {
+        const response = await db.query("DELETE FROM tokens WHERE user_id = $1", [this.user_id])
+        if (response.rows.length === 0) {
+            return `All tokens with user_id: ${this.user_id} have been deleted`
+        } else {
+            throw new Error("Response from database returned something when it should return nothing")
+        }
+    }
 
 }
 

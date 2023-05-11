@@ -40,6 +40,20 @@ async function login (req, res) {
     }
 }
 
+async function logout(req, res) {
+    try {
+        const userToken = req.headers["authorization"]
+        console.log("User token: ", userToken)
+        const token = await Token.getOneByToken(userToken)
+        console.log("Token found in DB: ", token);
+        const result = await token.deleteToken()
+        console.log("Result of token.delete: ", result);
+        res.status(200).json(result)
+    } catch (err) {
+        res.status(403).json({"error": err.message})
+    }
+}
+
 module.exports = {
-    register, login
+    register, login, logout
 }
