@@ -10,7 +10,7 @@ class Comment {
     }
 
     static async getByPostId(postId) {
-        const comments = await db.query('SELECT * FROM comments WHERE post_id = $1;', [postId])
+        const comments = await db.query('SELECT * FROM comments WHERE post_id = $1 ORDER BY comment_date DESC;', [postId])
         return comments.rows.map(c => new Comment(c))
     }
 
