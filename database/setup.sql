@@ -9,6 +9,9 @@ CREATE TABLE users (
     is_admin INT DEFAULT 0 NOT NULL,
     is_business INT DEFAULT 0 NOT NULL,
     password CHAR(60) NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES posts(post_author_id)
+    FOREIGN KEY (user_id) REFERENCES comments(comment_author_id)
+    FOREIGN KEY (user_id) REFERENCES tokens(user_id)
     PRIMARY KEY (user_id)
 );
 
@@ -27,7 +30,7 @@ CREATE TABLE posts (
     post_date DATE NOT NULL,
     post_category VARCHAR(20) NOT NULL,
     post_author_id INT NOT NULL,
-    FOREIGN KEY (post_author_id) REFERENCES users("user_id"),
+    FOREIGN KEY (post_author_id) REFERENCES comments("user_id"),
     PRIMARY KEY (post_id)
 );
 
@@ -60,7 +63,39 @@ INSERT INTO posts (post_title, post_content, post_date, post_category, post_auth
 INSERT INTO posts (post_title, post_content, post_date, post_category, post_author_id) VALUES ('First', 'Post', '2023-05-05', 'Services', 1);
 INSERT INTO posts (post_title, post_content, post_date, post_category, post_author_id) VALUES ('Second', 'Post', '2023-05-05', 'Services', 1);
 
-INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date) VALUES ('This is an awesome comment', 1, 1, '2023-05-05');
-INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date) VALUES ('This post sucks', 1, 2, '2023-05-05');
-INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date) VALUES ('This is awesome', 2, 2, '2023-05-05');
-INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date) VALUES ('I dont know what to say but wanted to anyway', 2, 1, '2023-05-05');
+
+INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date)
+VALUES ('Great job on this post! I found it very informative.', 1, 1, '2023-05-05');
+INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date)
+VALUES ('I completely agree with your points. Well said!', 1, 1, '2023-05-05');
+INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date)
+VALUES ('This is a thought-provoking comment. It made me reconsider my perspective.', 1, 2, '2023-05-05');
+INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date)
+VALUES ('Thank you for sharing your insights. I learned something new from your comment.', 1, 2, '2023-05-05');
+INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date)
+VALUES ('I appreciate your contribution to the discussion. Your comment adds valuable context.', 1, 3, '2023-05-05');
+INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date)
+VALUES ('Your comment resonated with me. It captures the essence of the topic perfectly.', 1, 3, '2023-05-05');
+
+INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date)
+VALUES ('Great job on this post! I found it very informative.', 2, 1, '2023-05-05');
+INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date)
+VALUES ('I completely agree with your points. Well said!', 2, 1, '2023-05-05');
+INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date)
+VALUES ('This is a thought-provoking comment. It made me reconsider my perspective.', 2, 2, '2023-05-05');
+INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date)
+VALUES ('Thank you for sharing your insights. I learned something new from your comment.', 2, 2, '2023-05-05');
+INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date)
+VALUES ('I appreciate your contribution to the discussion. Your comment adds valuable context.', 2, 3, '2023-05-05');
+INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date)
+VALUES ('Your comment resonated with me. It captures the essence of the topic perfectly.', 2, 3, '2023-05-05');
+
+
+
+
+
+
+-- INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date) VALUES ('This is an awesome comment', 1, 1, '2023-05-05');
+-- INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date) VALUES ('This post sucks', 1, 2, '2023-05-05');
+-- INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date) VALUES ('This is awesome', 2, 2, '2023-05-05');
+-- INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date) VALUES ('I dont know what to say but wanted to anyway', 2, 1, '2023-05-05');
