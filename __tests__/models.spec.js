@@ -13,9 +13,38 @@ describe('API models', () => {
         done()
     
     })
-
-    it('Post getAll function exists', () => {
+    // Post Model
+    it('Post has getAll function exists', () => {
         expect(Post).toHaveProperty('getAll')
-        // done()
     })
+
+    it("Post has getAllAnnouncements function exists", () => {
+        expect(Post).toHaveProperty('getAllAnnouncements');
+    });
+
+    it("Post has getAllEvents function exists", () => {
+        expect(Post).toHaveProperty("getAllEvents");
+    });
+    
+    it("Post has getAllVoluntary function exists", () => {
+        expect(Post).toHaveProperty("getAllVoluntary");
+    });
+    
+    it("Post has getAllClubs function exists", () => {
+        expect(Post).toHaveProperty("getAllClubs");
+    });
+
+    it("Post has getAllClubs function exists", () => {
+        expect(Post).toHaveProperty("getAllClubs");
+    });
+
+    it("Post has show function exists", () => {
+        expect(Post).toHaveProperty("show");
+    });
+
+    // Comment Model
+
+    it('Comment has getByPostId exists', () => {
+        expect(Post).toHaveProperty("getByPostId");
+    });
 })
