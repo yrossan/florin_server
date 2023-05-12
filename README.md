@@ -18,7 +18,7 @@ cd florin_server/
 ```
 npm install
 ```
-5. Create a ```SQL``` server and and get the connection URL we would reccomend ```elephantSQL``` but you can use another method
+5. Create a ```SQL``` database and and get the connection URL we would reccomend ```elephantSQL``` but you can use another method
 6. Open your code editor by running this command in your GitBash terminal
 ```
 code .
