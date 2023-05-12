@@ -64,10 +64,10 @@ VALUES
 
 
 INSERT INTO comments (comment_content, post_id, comment_author_id, comment_date) VALUES 
-    ('Yeah I heard he doesnt even like pandas', 1, 1, '2023-05-05'),
-    ('but theyre so cute, how can you not like pandas', 1, 1, '2023-05-06'),
-    ('Nah hes not mean he just wants us to be awesome so he holds us to a high standard', 1, 2, '2023-05-07'),
-    ('I dont know about that he gets a little to joyful about picking holes in our work', 1, 2, '2023-05-08'),
+    ('Yeah I heard he doesnt even like pandas', 1, 1, '2023-05-08'),
+    ('but theyre so cute, how can you not like pandas', 1, 1, '2023-05-07'),
+    ('Nah hes not mean he just wants us to be awesome so he holds us to a high standard', 1, 2, '2023-05-06'),
+    ('I dont know about that he gets a little to joyful about picking holes in our work', 1, 2, '2023-05-05'),
     ('Great job on this post! I found it very informative.', 2, 1, '2023-05-05'),
     ('I completely agree with your points. Well said!', 2, 1, '2023-05-05'),
     ('This is a thought-provoking comment. It made me reconsider my perspective.', 2, 2, '2023-05-05'),

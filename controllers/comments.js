@@ -1,4 +1,4 @@
-const Comment = require('../models/Comment')
+const Comment = require('../models/Commentt')
 
 async function show(req, res) {
     try {
